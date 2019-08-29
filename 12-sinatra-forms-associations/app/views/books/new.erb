@@ -3,7 +3,18 @@
   <!-- add book to the front of all your input names to make them -->
   <!-- available in your controller as a hash via params[:book]-->
   <p>Title: <input type="text" name="book[title]"></p>
-  <p>Author: <input type="text" name="book[author]"></p>
+  <p>Author: 
+    <select name="book[author_id]">
+        <option value="">Select an author</option>
+      <% Author.all.each do |author| %>
+        <option value="<%= author.id %>"><%= author.name %></option>
+      <% end %>
+    </select>
+  </p>
+  <p>OR</p>
+  <p>
+    New author name: <input type="text" name="book[author][name]">
+  </p>
   <p>Snippet:<input type="text" name="book[snippet]"></p>
   <button type="submit" value="submit">Submit</button>
 </form>

@@ -2,10 +2,11 @@ module GoogleBooks
   class Adapter
     BASE_URL = 'https://www.googleapis.com/books/v1/volumes?q='
 
-    attr_reader :author
+    attr_reader :author_name, :author
 
     def initialize(author)
-      @author = author_sanitizer(author)
+      @author = author
+      @author_name = author_sanitizer(author.name)
     end
 
     def fetch_books
@@ -24,7 +25,7 @@ module GoogleBooks
     private
 
     def author_url(max_results = 20)
-      "#{BASE_URL}#{author}&maxResults=#{max_results}"
+      "#{BASE_URL}#{author_name}&maxResults=#{max_results}"
     end
 
     def author_sanitizer(author)

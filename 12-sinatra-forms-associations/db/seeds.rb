@@ -1,3 +1,5 @@
 Book.destroy_all
+Author.destroy_all
 
-GoogleBooks::Adapter.new("Madeline L'Engle").fetch_books
+madeline = Author.create(name: "Madeline L'Engle")
+GoogleBooks::Adapter.new(madeline).fetch_books

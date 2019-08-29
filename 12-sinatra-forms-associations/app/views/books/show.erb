@@ -1,5 +1,5 @@
 <h2><%= @book.title %></h2>
-<h3><%= @book.author %></h3>
+<h3><a href="/authors/<%= @book.author.id %>"><%= @book.author.name %></a></h3>
 <p><%= @book.snippet %></p>
 
 <!-- Delete Form - make sure 'Use Rack::MethodOverride' is in config.ru file for this to work -->
