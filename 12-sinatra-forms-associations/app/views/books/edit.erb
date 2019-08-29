@@ -1,0 +1,12 @@
+<h2>Edit A Book</h2>
+<!-- Edit Form - make sure 'Use Rack::MethodOverride' is in config.ru file for this to work -->
+<form action="/books/<%= @book.id %>" method="post">
+  <!-- Hidden input to change "POST" method to "PATCH" -->
+  <input type="hidden" name="_method" value="patch">
+  <!-- For us to be able to see the current values of each attribute before we edit them, -->
+  <!-- we need to set the value of each input to the current value of the attribute in question -->
+  <p>Title: <input type="text" name="book[title]" value="<%= @book.title %>" ></p>
+  <p>Author: <input type="text" name="book[author]" value="<%= @book.author %>" ></p>
+  <p>Snippet:<input type="text" name="book[snippet]" value="<%= @book.snippet %>" ></p>
+  <button type="submit" value="submit">Update</button>
+</form>

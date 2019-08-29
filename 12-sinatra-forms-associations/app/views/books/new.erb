@@ -1,0 +1,9 @@
+<h2>Add A New Book</h2>
+<form action="/books" method="post">
+  <!-- add book to the front of all your input names to make them -->
+  <!-- available in your controller as a hash via params[:book]-->
+  <p>Title: <input type="text" name="book[title]"></p>
+  <p>Author: <input type="text" name="book[author]"></p>
+  <p>Snippet:<input type="text" name="book[snippet]"></p>
+  <button type="submit" value="submit">Submit</button>
+</form>
