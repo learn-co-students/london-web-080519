@@ -1,0 +1,12 @@
+<h1><%= @bar.name %></h1>
+<p>Find me in <%= @bar.location %></p>
+<% if @bar.drinks.length == 0 %>
+    This bar has no drinks available.
+<% else %>
+<ul>
+    <% @bar.drinks.each do |drink| %>
+        <li><%= link_to drink.name, drink %></li>
+    <%end%>
+</ul>
+<% end %>
+<%= link_to 'Edit bar', edit_bar_path(@bar) %>
