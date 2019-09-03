@@ -1,0 +1,7 @@
+<%= form_tag adopt_dog_path, method: "patch" do %>
+    <%= hidden_field_tag :dog_id, @dog.id %> 
+    <%= label_tag  :employee_id, "Choose an employee" %>
+    <%= select_tag  :employee_id, options_from_collection_for_select(Employee.all, :id, :first_name)%>
+    <%= submit_tag "Adopt Dog" %>
+    <% end %>
+
