@@ -1,0 +1,15 @@
+<%= form_for @drink do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :spirit %>
+    <%= f.text_field :spirit %>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+    <%= f.label :units %>
+    <%= f.number_field :units %>
+    <%= f.label :glass_type %>
+    <%= f.text_field :glass_type %>
+    <%= f.label :bar_id %>
+    <%= f.collection_select :bar_id, Bar.all, :id, :name %>
+    <%= f.submit %>
+<% end %>
