@@ -1,0 +1,13 @@
+<h1>all brands</h1>
+<div>
+    the most popular car brand is <%= link_to Brand.most_popular.name, Brand.most_popular %>
+</div>
+<div>
+    the least popular car brand is <%= link_to Brand.least_popular.name, Brand.least_popular %>
+</div>
+<ul>
+<% @brands.each do |brand| %>
+    <li><%= link_to brand.name, brand %> </li>
+<% end %>
+
+</ul>

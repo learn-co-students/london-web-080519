@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <%= link_to 'cars', cars_path %>
+    <%= link_to 'brands', brands_path %>
+    <%= link_to 'mechanics', mechanics_path %>
+    <%= link_to 'owners', owners_path %>
+    <%= link_to 'new car', new_car_path %>
+    <%= link_to 'new owner', new_owner_path %>
+    <%= link_to 'new brand', new_brand_path %>
+    <%= link_to 'new mechanic', new_mechanic_path %>
+
+    <% if flash[:errors] %>
+      <ul style="color: red;">
+          <% flash[:errors].each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+      </ul>
+    <% end %>
     <%= yield %>
   </body>
 </html>

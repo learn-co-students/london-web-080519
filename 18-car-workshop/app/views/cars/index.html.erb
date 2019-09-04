@@ -1,0 +1,16 @@
+<h1>all cars</h1>
+
+<ul>
+<% @cars.each do |car| %>
+    
+    <li>
+        <% if car.usual_mechanic %>
+            <%= link_to car.brand.name, car.brand %> owned by <%= link_to car.owner.name, car.owner %>, usually serviced by <%= link_to car.usual_mechanic.name, car.usual_mechanic %>
+        <% else %>
+            <%= link_to car.brand.name, car.brand %> owned by <%= link_to car.owner.name, car.owner %>, never been serviced!
+        <% end %>
+        <%= render 'service_form', { car: car } %>
+    </li>
+<% end %>
+
+</ul>

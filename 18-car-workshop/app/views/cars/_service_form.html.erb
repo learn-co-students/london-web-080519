@@ -1,0 +1,5 @@
+<%= form_for @service do |f| %>
+    <%= f.hidden_field :car_id, value: car.id %>
+    <%= f.collection_select :mechanic_id, Mechanic.all, :id, :name %>
+    <%= f.submit %>
+<% end %>

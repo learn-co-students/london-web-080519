@@ -1,0 +1,9 @@
+<%= form_for @car do |f| %>
+    <%= f.label :owner_id %>
+    <%= f.collection_select :owner_id, Owner.all, :id, :name %>
+    <%= f.label :brand_id %>
+    <%= f.collection_select :brand_id, Brand.all, :id, :name %>
+    <%= f.label :mechanic_id %>
+    <%= f.collection_select :mechanic_id, Mechanic.all, :id, :name %>
+    <%= f.submit %>
+<% end %>
