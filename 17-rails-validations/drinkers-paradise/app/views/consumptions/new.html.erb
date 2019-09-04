@@ -1,0 +1,12 @@
+<%= form_for @consumption do |f| %>
+    <% if @patron %>
+        <p>you're drinking with <%= @patron.name %></p>
+        <%= f.hidden_field :patron_id, value: params[:patron_id] %>
+    <% else %>
+    <%= f.label :patron_id %>
+    <%= f.collection_select :patron_id, Patron.all, :id, :name %>
+    <% end %>
+    <%= f.label :drink_id %>
+    <%= f.collection_select :drink_id, Drink.all, :id, :option_text %>
+    <%= f.submit %>
+<% end %>
