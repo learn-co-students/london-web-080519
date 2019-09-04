@@ -6,7 +6,12 @@ class PatronsController < ApplicationController
     
     def create
         patron = Patron.create(patron_params)
-        redirect_to patron
+        if patron.valid?
+            redirect_to patron
+        else
+            flash[:errors] = patron.errors.full_messages
+            redirect_to new_patron_path
+        end
     end
 
     def show

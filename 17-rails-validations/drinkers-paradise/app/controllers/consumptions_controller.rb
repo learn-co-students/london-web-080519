@@ -7,7 +7,13 @@ class ConsumptionsController < ApplicationController
 
     def create
         consumption = Consumption.create consumption_params
-        redirect_to consumption.patron
+        if consumption.valid?
+            flash[:notices] = ["cheers!"]
+            redirect_to consumption.patron
+        else
+            flash[:errors] = consumption.errors.full_messages
+            redirect_to new_consumption_path
+        end
     end
 
     private

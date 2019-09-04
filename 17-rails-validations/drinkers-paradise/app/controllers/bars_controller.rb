@@ -15,7 +15,12 @@ class BarsController < ApplicationController
 
   def create
     bar = Bar.create(bar_params)
-    redirect_to bar
+    if bar.valid?
+      redirect_to bar
+    else
+      flash[:errors] = bar.errors.full_messages
+      redirect_to new_bar_path
+    end
   end
 
   def edit

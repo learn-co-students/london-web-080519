@@ -19,6 +19,21 @@
     <%= link_to 'new patron', new_patron_path %>
     <%= link_to 'new consumption', new_consumption_path %>
   </nav>
+  <% if flash[:errors] %>
+    <ul class="errors">
+      <h2>OOPS SOMETHING PREVENTED THIS FROM SAVING</h2>
+      <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <% if flash[:notices] %>
+    <ul class="notices">
+      <% flash[:notices].each do |notice| %>
+        <li><%= notice %></li>
+      <% end %>
+    </ul>
+  <% end %>
     <%= yield %>
   </body>
 </html>

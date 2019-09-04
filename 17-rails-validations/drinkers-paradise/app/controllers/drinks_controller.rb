@@ -9,7 +9,12 @@ class DrinksController < ApplicationController
 
   def create
     drink = Drink.create drink_params
-    redirect_to drink
+    if drink.valid?
+      redirect_to drink
+    else
+      flash[:errors] = drink.errors.full_messages
+      redirect_to new_drink_path
+    end
   end
 
   private
