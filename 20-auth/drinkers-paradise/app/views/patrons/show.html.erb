@@ -1,0 +1,16 @@
+<h2><%= @patron.name %></h2>
+<p><%= @patron.age%> y/o</p>
+<% if @patron.is_drunk? %>
+<p class="drunk-letters wobble">they are drubnk!</p>
+<% else %>
+<p>they are sober</p>
+<% end %>
+
+Drinks:
+<ul>
+    <% @patron.drinks.each do |drink| %>
+        <li><%= link_to drink.name, drink %></li>
+    <% end %>
+</ul>
+
+<%= link_to 'Have a drink', new_consumption_path({ patron_id: @patron.id }) %>

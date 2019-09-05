@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DrinkersParadise</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav>
+    <%= link_to 'bars', bars_path %>
+    <%= link_to 'new bar', new_bar_path %>
+    <%= link_to 'new drink', new_drink_path %>
+    <%= link_to 'new patron', new_patron_path %>
+    <%= link_to 'new consumption', new_consumption_path %>
+  </nav>
+  <% if flash[:errors] %>
+    <ul class="errors">
+      <h2>OOPS SOMETHING PREVENTED THIS FROM SAVING</h2>
+      <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <% if flash[:notices] %>
+    <ul class="notices">
+      <% flash[:notices].each do |notice| %>
+        <li><%= notice %></li>
+      <% end %>
+    </ul>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>

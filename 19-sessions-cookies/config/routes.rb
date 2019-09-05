@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/logout'
   root to: 'answers#new'
   resources :users
   resources :answers

@@ -1,0 +1,7 @@
+<h1>All Bars</h1>
+<h3>the bar with the most drinks is <%= link_to Bar.most_drinks.name, Bar.most_drinks %></h3>
+<ul>
+    <% @bars.each do |bar| %>
+        <li><%= link_to bar.name, bar_path(bar) %> </li>
+    <% end %>
+</ul>

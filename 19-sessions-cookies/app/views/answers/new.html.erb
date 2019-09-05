@@ -9,14 +9,20 @@
 <% if flash[:notice] %>
     <h1><%= flash[:notice] %></h1>
 <% end %>
+<h2>Score: <%= session[:score] %></h2>
 
 <%= form_for @answer do |f| %>
   <fieldset>
 
     <%= f.hidden_field :instructor_id, value: @instructor.id %>
 
+    <% if @user %>
+    <p>Welcome back <%= @user.name %></p>
+    <%= f.hidden_field :user_id, value: @user.id %>
+    <% else %>
     <%= f.label :user_name, "Your name" %>
     <%= f.text_field :user_name %>
+    <% end %>
 
     <h4>What is <strong><%= @instructor.name.capitalize %>'s</strong> favourite cookie?</h4>
 
