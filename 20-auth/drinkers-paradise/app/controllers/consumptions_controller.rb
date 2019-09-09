@@ -1,5 +1,7 @@
 class ConsumptionsController < ApplicationController
 
+    before_action :authorize_user, only: [:new, :create]
+
     def new
         @consumption = Consumption.new
         @patron = params[:patron_id] ? Patron.find(params[:patron_id]) : nil

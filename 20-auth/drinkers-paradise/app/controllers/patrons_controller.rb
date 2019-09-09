@@ -1,4 +1,5 @@
 class PatronsController < ApplicationController
+    before_action :authorize_user, only: [:new, :create]
 
     def new
         @patron = Patron.new

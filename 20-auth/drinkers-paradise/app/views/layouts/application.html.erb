@@ -18,6 +18,13 @@
     <%= link_to 'new drink', new_drink_path %>
     <%= link_to 'new patron', new_patron_path %>
     <%= link_to 'new consumption', new_consumption_path %>
+    <% if logged_in? %>
+      <%= link_to 'log out', logout_path %>
+    <% else %>
+      <%= link_to 'log in', login_path %>
+      or
+      <%= link_to 'sign up', signup_path %>
+    <% end %>
   </nav>
   <% if flash[:errors] %>
     <ul class="errors">

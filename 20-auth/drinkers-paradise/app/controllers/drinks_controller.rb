@@ -1,4 +1,5 @@
 class DrinksController < ApplicationController
+  before_action :authorize_user, only: [:new, :create]
   def show
     @drink = Drink.find params[:id]
   end
