@@ -1,0 +1,28 @@
+.inner-pre {
+  margin: 0;
+  white-space: pre-line;
+  font-size: 7px;
+}
+
+h1 {
+  margin: 0;
+}
+
+pre {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+#moon {
+  float: right;
+  transition: 0.5s;
+  padding: 10px;
+}
+
+#moon:hover {
+  font-size: 100px;
+  transform: rotate(-40deg);
+}
