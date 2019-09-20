@@ -6,6 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
   </head>
-  <body></body>
-  <script src="app.js"></script>
+  <body>
+    <h1>this is a website</h1>
+    <div>
+      <p>select mode:</p>
+      <button id="get">get</button>
+      <button id="post">post</button>
+      <button id="put">put</button>
+      <button id="patch">patch</button>
+      <button id="delete">delete</button>
+    </div>
+    <div>list of posts:</div>
+    <div id="loading">LOADING...</div>
+    <form>
+      <p>server business:</p>
+      <div>
+        <input type="text" />
+        <label for=""></label>
+      </div>
+      <div>
+        <input type="text" />
+        <label for=""></label>
+      </div>
+      <div>
+        <input type="submit" value="get all posts" />
+      </div>
+    </form>
+  </body>
+  <script src="./src/helpers/api.js"></script>
 </html>

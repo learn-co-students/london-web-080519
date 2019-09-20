@@ -1,9 +1,43 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "tlc" },
-    { "id": 2, "title": "json-waterfalls", "author": "tlc" },
-    { "id": 3, "title": "json-donovan", "author": "tlc" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "me"
+    },
+    {
+      "author": "me",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "title": "json-donovan",
+      "author": "tlc"
+    },
+    {
+      "title": "breadmaking",
+      "author": "me",
+      "id": 4
+    },
+    {
+      "title": "breadmaking",
+      "author": "me",
+      "id": 5
+    },
+    {
+      "title": "breadmaking",
+      "author": "me",
+      "id": 6
+    }
   ],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }
