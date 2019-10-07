@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
-import Header from './components/Header'
 import './App.css';
-import PaintingsList from './components/PaintingsList';
-import Search from './components/Search';
+import artworks from './artworks'
+import ArtworkList from './ArtworkList';
+import Header from './Header';
+import SearchForm from './SearchForm';
 
 class App extends Component {
-
-  state = {
-    searchTerm: ''
-  }
-
   render() {
     return (
       <div className="App">
         <Header />
-        <Search />
-        <PaintingsList />
+        <SearchForm buttonText="Search this term" onSearch={(event) => console.log('search button clicked in app')} />
+        <ArtworkList artworks={artworks.filter(a => a.votes < 20)} />
       </div>
     );
   }
