@@ -132,7 +132,7 @@ h5 {
 }
 
 .new-task-form > input[type="submit"]:hover {
-  filter: brightness(1.2)
+  filter: brightness(1.2);
 }
 
 button.toggle {
@@ -154,7 +154,7 @@ button.toggle.on {
 }
 
 button.toggle.on:before {
-  content: '';
+  content: "";
   background: #d3edff;
   position: absolute;
   transform-origin: center;
