@@ -10,6 +10,7 @@ class Api::V1::PostsController < ApplicationController
 
     def create
         post = Post.create(post_params)
+        post.update(user: @current_user)
         if (post.valid?)
             render json: post
         else
@@ -20,6 +21,6 @@ class Api::V1::PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:content, :title, :user_id)
+        params.require(:post).permit(:content, :title)
     end
 end

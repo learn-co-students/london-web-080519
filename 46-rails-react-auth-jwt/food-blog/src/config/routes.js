@@ -1,4 +1,8 @@
 import Home from '../components/Home'
+import PostIndex from '../components/PostIndex'
+import PostShow from '../components/PostShow'
+import LoginForm from '../components/LoginForm'
+import NewPostForm from '../components/NewPostForm'
 
 export const routes = [
   {
@@ -8,15 +12,24 @@ export const routes = [
   },
   {
     title: 'All posts',
-    path: '/posts'
+    path: '/posts',
+    component: PostIndex
+  },
+  {
+    title: 'Post show',
+    path: '/posts/:id',
+    component: PostShow,
+    exact: true
   },
   {
     title: 'New post',
-    path: '/posts/new'
+    path: '/posts/new',
+    component: NewPostForm
   },
   {
     title: 'Log in',
-    path: '/login'
+    path: '/login',
+    component: LoginForm
   },
   {
     title: 'Sign up',
@@ -24,6 +37,11 @@ export const routes = [
   },
   {
     title: 'Log out',
-    path: '/logout'
+    path: '/logout',
+    component: props => {
+      props.logout()
+
+      return null
+    }
   }
 ]
