@@ -73,6 +73,7 @@ main {
 
 .card:hover {
   box-shadow: 0 0 1rem 0 grey;
+  animation: card-hover 1s;
 }
 
 .card > button.delete {
@@ -119,4 +120,13 @@ main {
   height: 100%;
   position: absolute;
   background: #ffffff80;
+}
+
+@keyframes card-hover {
+  0% {
+    box-shadow: 1rem 1rem 1rem 1rem pink;
+  }
+  100% {
+    box-shadow: 10rem 10rem 10rem 10rem rgb(255, 0, 43);
+  }
 }

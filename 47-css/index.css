@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+nav {
+  width: 100vw;
+  background: grey;
+  height: 3rem;
+  font-family: sans-serif;
+  display: flex;
+}
+
+nav > a {
+  height: 100%;
+  line-height: 3rem;
+  min-width: 5rem;
+  background: lightgrey;
+  text-align: center;
+}
+
+nav > a:hover {
+  filter: brightness(1.2);
+}
+
+nav > a:last-child {
+  margin-left: auto;
+}
+
+nav > a:nth-child(2) {
+  background: green;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  background-image: url(https://s3.amazonaws.com/btoimage/prism-thumbnails/articles/20182024-radiohead.jpg-resize_then_crop-_frame_bg_color_FFF-h_1365-gravity_center-q_70-preserve_ratio_true-w_2048_.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+main {
+  max-width: 50rem;
+  margin: auto;
+  background: #dedede;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cards > div {
+  background: white;
+  height: 10rem;
+  margin: 1rem auto;
+  position: relative;
+}
+
+button.delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
