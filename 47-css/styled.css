@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+nav {
+  height: 2rem;
+  background: gray;
+  border-bottom: solid 0.1rem rgb(255, 223, 82);
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+nav > a {
+  min-width: 5rem;
+  display: block;
+  text-align: center;
+  line-height: 2rem;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  padding: 0 1rem;
+  background: rgb(146, 146, 146);
+}
+
+main > h2 {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+nav > a:hover {
+  filter: brightness(1.2);
+}
+nav > a:last-child {
+  margin-left: auto;
+}
+
+nav > a.active {
+  color: #2e2e2e;
+  background: rgb(255, 223, 82);
+}
+
+main {
+  z-index: -10;
+  max-width: 60rem;
+  margin: auto;
+  border-left: 1px solid grey;
+  padding: 0 2rem;
+  border-right: 1px solid grey;
+  padding-top: 2rem;
+  background: #f1f1f1;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 10rem;
+  margin: 1rem auto;
+  position: relative;
+  border-radius: 0.5rem;
+  border: solid #cecece 0.1rem;
+  padding: 0 0.5rem;
+  display: grid;
+  grid-template-rows: 30% 50% 20%;
+  background: white;
+}
+
+.card:hover {
+  box-shadow: 0 0 1rem 0 grey;
+}
+
+.card > button.delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 0.5rem 0 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  background: pink;
+  color: #ff4040;
+  border: solid 0.1rem #ff4040;
+  cursor: pointer;
+}
+
+.card > h2 {
+  max-width: calc(100% - 2rem);
+}
+
+.card > img {
+  width: 100%;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-image: url(https://s3.amazonaws.com/btoimage/prism-thumbnails/articles/20182024-radiohead.jpg-resize_then_crop-_frame_bg_color_FFF-h_1365-gravity_center-q_70-preserve_ratio_true-w_2048_.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero > .title {
+  margin: auto;
+  background: #fedf52;
+  padding: 1rem;
+  font-size: 2rem;
+  z-index: 10;
+  box-shadow: 0 0 3rem 0rem grey;
+}
+
+.hero > .filter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #ffffff80;
+}
