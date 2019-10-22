@@ -1,0 +1,11 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@defaultBorderRadius: 0px;
+
+@primaryColor: #ddee44;
+@negativeColor: @pink;
+@positiveColor: #00ff00;
+
+@gray: #abcabc;
