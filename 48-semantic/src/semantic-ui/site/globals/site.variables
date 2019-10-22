@@ -1,0 +1,12 @@
+/*******************************
+     User Global Variables
+*******************************/
+@defaultBorderRadius: 0px;
+@fontFamily: 'Jomolhari';
+@fontName : 'Jomolhari';
+
+@pink: #123123;
+@primaryColor: @pink;
+
+@emSize: 13px;
+@fontSize : @emSize;
