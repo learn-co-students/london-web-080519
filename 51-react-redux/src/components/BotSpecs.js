@@ -1,22 +1,24 @@
-import React from "react";
+import React from 'react'
+import { connect } from 'react-redux'
+import ACTION_TYPES from '../actionTypes'
 
 const BotSpecs = props => {
-  let { bot } = props;
+  let { bot } = props
 
-  let botType;
+  let botType
 
   switch (bot.bot_class) {
-    case "Assault":
-      botType = <i className="icon large circular military" />;
-      break;
-    case "Defender":
-      botType = <i className="icon large circular shield" />;
-      break;
-    case "Support":
-      botType = <i className="icon large circular ambulance" />;
-      break;
+    case 'Assault':
+      botType = <i className="icon large circular military" />
+      break
+    case 'Defender':
+      botType = <i className="icon large circular shield" />
+      break
+    case 'Support':
+      botType = <i className="icon large circular ambulance" />
+      break
     default:
-      botType = <div />;
+      botType = <div />
   }
 
   return (
@@ -74,8 +76,18 @@ const BotSpecs = props => {
         </div>
       </div>
     </div>
-  );
+  )
+}
 
-};
+const mapDispatchToProps = dispatch => {
+  return {
+    enlistBot: bot =>
+      dispatch({ type: ACTION_TYPES.ENLIST_BOT, payload: { botId: bot.id } }),
+    deselectBot: () => dispatch({ type: ACTION_TYPES.DESELECT_BOT })
+  }
+}
 
-export default BotSpecs;
+export default connect(
+  null,
+  mapDispatchToProps
+)(BotSpecs)
